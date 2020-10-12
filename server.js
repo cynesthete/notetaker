@@ -11,3 +11,5 @@ app.use(require("./routes/htmlroutes"));
 app.listen(PORT, function(){
     console.log(`listening on port ${PORT}`);
 });
+
+// server set up
