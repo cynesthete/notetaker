@@ -20,4 +20,12 @@ router.post("/api/notes", (req, res)=>{
 
 //create delete route
 
+router.delete("/api/notes/:id", (req, res)=>{
+    db = db.filter((note)=> note.id !== req.params.id);
+    fs.writeFile(path.join(__dirname, "../db/db.json"), JSON.stringify(db), error =>{
+        if (error) throw error;
+        res.sendStatus(200);
+    });
+})
+
 module.exports = router;
